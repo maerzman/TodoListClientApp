@@ -1,0 +1,17 @@
+<template>
+    <h1>Edit Todo</h1>
+
+    <label>Title</label>
+    <input type="text" value.bind="todo.title" />
+    <br>
+    
+    <label>IsDone</label>
+    <input type="checkbox" checked.bind="todo.isDone" />
+    <br>
+
+    <label>Due Date</label>
+    <input type="datetime-local" format-value="yyyy.MM.dd hh:mm" value.bind="todo.due"/>
+    <br>
+    
+    <button click.delegate="editTodo()">Confirm</button>
+</template>

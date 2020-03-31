@@ -1,0 +1,19 @@
+<template>
+    <h1>New Todo</h1>
+    
+    <label>Title</label>
+    <input type="text" value.bind="todo.Title" />
+    <br>
+    
+    <label>IsDone</label>
+    <input type="checkbox" checked.bind="todo.IsDone"/>
+    <br>
+
+    
+    <label>Due Date</label>
+    <!--Doesn't bind auto generated values for some weird reason ..-->
+    <input type="datetime-local" format-value="yyyy.MM.dd hh:mm" value.bind="todo.Due"/>
+    <br>
+    
+    <button click.delegate="createTodo()">Confirm</button>
+</template>

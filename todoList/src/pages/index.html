@@ -1,0 +1,29 @@
+<template> 
+    <require from="../value-converter/datetime-converter"></require>
+    <h1>Home</h1>
+    <div if.bind="todos">
+        <table class="table">
+            <tr>
+                <th>Title</th>
+                <th>Created</th>
+                <th>Due Date</th>
+                <th>Actions</th>
+            </tr>
+
+            <tr repeat.for="todo of todos" class='${colorclass(todo.isDone, todo.due)}'>
+                <td>${todo.title}</td>
+                <td>${todo.created | date}</td>
+                <td>${todo.due | date}</td>
+                <td>
+                    <button click.delegate="removeTodo(todo.id)">Remove</button>
+                    <button click.delegate="editTodo(todo.id)">Edit</button>
+                </td>
+            </tr>
+        </table>
+        <button click.delegate="addTodo()">Add new Todo item</button> 
+    </div>
+
+    <div if.bind="!todos">
+        Loading Todos ...
+    </div>
+</template>
